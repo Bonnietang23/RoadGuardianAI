@@ -39,11 +39,6 @@ parser.add_argument("--network", type=str, default="ssd-mobilenet-v1", help="pre
 parser.add_argument("--overlay", type=str, default="box,labels,conf", help="detection overlay flags (e.g. --overlay=box,labels,conf)\nvalid combinations are:  'box', 'labels', 'conf', 'none'")
 parser.add_argument("--threshold", type=float, default=0.5, help="minimum detection threshold to use") 
 
-SENDER_EMAIL = 'huixintang963@gmail.com'
-SENDER_PASSWORD = 'cyalgdpupqvryeko'
-RECEIVER_EMAIL = 's1110158@my.cmsh.cyc.edu.tw'
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
 try:
 	args = parser.parse_known_args()[0]
 except:
@@ -85,11 +80,10 @@ while True:
         
         if object in ['bear', 'people', 'stop sign', 'car']:
             if detection.Confidence > 0.8:
-                subject = 'Alert!'
                 message = f'{object} detected!'
 
                 # send email
-                send_email(SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAIL, subject, message, SMTP_SERVER, SMTP_PORT)
+                send_email(message)
 
     # render the image
     output.Render(img)

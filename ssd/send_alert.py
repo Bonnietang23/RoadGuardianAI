@@ -3,27 +3,35 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_email(sender_email, sender_password, receiver_email, subject, message, smtp_server, smtp_port):
-    # 创建邮件内容
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = receiver_email
-    msg['Subject'] = subject
+SENDER_EMAIL = 'huixintang963@gmail.com'
+SENDER_PASSWORD = 'cyalgdpupqvryeko'
+RECEIVER_EMAIL = 's1110158@my.cmsh.cyc.edu.tw'
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+SUBJECT = 'Alert!'
 
-    # 添加邮件正文
+def send_email(message):
+
+    # create email content
+    msg = MIMEMultipart()
+    msg['From'] = SENDER_EMAIL
+    msg['To'] = RECEIVER_EMAIL
+    msg['Subject'] = SUBJECT
+
+    # Add email message
     msg.attach(MIMEText(message, 'plain'))
 
     try:
-        # 登录到 SMTP 服务器
-        server = smtplib.SMTP(smtp_server, smtp_port)
+        # log into SMTP server
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
-        server.login(sender_email, sender_password)
+        server.login(SENDER_EMAIL, SENDER_PASSWORD)
 
-        # 发送邮件
-        server.sendmail(sender_email, receiver_email, msg.as_string())
+        # send email
+        server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
         print('Mail sent successfully')
 
-        # 关闭连接
+        # close connection
         server.quit()
     except Exception as e:
         print('Email sending failed:', str(e))

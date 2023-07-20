@@ -1,7 +1,7 @@
 # RoadGuardianAI
 ## Introduction
 This project is about a system that detects humans, bears, cars, animals, and stop signs. 
-When the system detects these objects, it will automatically send an email to my Gmail inbox. The core of this project involves using deep learning techniques, particularly Convolutional Neural Networks (CNN), to recognize and classify different objects. Through this approach, we can achieve efficient and accurate object detection and promptly notify the user when specific objects are detected.
+When the system detects these objects, it will automatically send an email to my Gmail inbox. This project leverages the built-in `detectnet.py` function on jetson-inference library. And your demo is done on jetson nano.The core of this project involves using deep learning techniques, particularly Convolutional Neural Networks (CNN), to recognize and classify different objects. Through this approach, we can achieve efficient and accurate object detection and promptly notify the user when specific objects are detected.
 ### Paradigm
 ![Imgur](https://i.imgur.com/9wkQyR2.jpg)
 ![Imgur](https://i.imgur.com/EFBemRN.jpg)
@@ -15,9 +15,9 @@ This project has broad application potential. For example, it can be applied to 
 ## Get started
 1.Get jetson infereance
 
-    ```{bash}
-    git clone https://github.com/dusty-nv/jetson-inference.git
-    ```
+```{bash}
+git clone https://github.com/dusty-nv/jetson-inference.git
+```
 2.Find photos on the web
 ![Imgur](https://i.imgur.com/9wkQyR2.jpg)
 3.Put the photos into the jetson-inference-images file.
