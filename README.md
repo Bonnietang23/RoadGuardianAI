@@ -48,9 +48,9 @@ Write the code for sending email in project -ssd -send_alert.py
  Write email conditions and recipient messages in project-ssd-detectnet.py
 
  During this setup, he will ask you to open your google API, so some operations will be required. If you want to know the complete code, you can refer to this link.
+
  https://www.learncodewithmike.com/2020/02/python-email.html
  (Chinese)
-   
 https://reurl.cc/K0LXWn
 (English)
 
