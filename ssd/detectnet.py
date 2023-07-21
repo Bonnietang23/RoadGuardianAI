@@ -81,7 +81,6 @@ while True:
         if object in ['bear', 'people', 'stop sign', 'car']:
             if detection.Confidence > 0.8:
                 message = f'{object} detected!'
-
                 # send email
                 send_email(message)
 
